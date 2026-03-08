@@ -1,16 +1,17 @@
 name: DevOps CI/CD Pipeline
 
 on:
-push:
-branches:
-- main
+  push:
+    branches:
+      - main
 
 jobs:
-build:
-runs-on: ubuntu-latest
+  build:
+    runs-on: ubuntu-latest
 
-steps:
-- uses: actions/checkout@v3
+    steps:
+      - name: Checkout Repository
+        uses: actions/checkout@v3
 
-- name: Build Docker Image
-run: docker build -t animal-website ./app
+      - name: Build Docker Image
+        run: docker build -t animal-website ./app
