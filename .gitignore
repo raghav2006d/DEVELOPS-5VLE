@@ -1,0 +1,22 @@
+# Terraform
+.terraform/
+*.tfstate
+*.tfstate.backup
+.terraform.lock.hcl
+
+# Downloads
+*.zip
+
+# VS Code
+.vscode/
+
+# Python
+__pycache__/
+# Terraform
+.terraform/
+
+# AWS installer
+terraform/aws/
+
+# Zip files
+*.zip

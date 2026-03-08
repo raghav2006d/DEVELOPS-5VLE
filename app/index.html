@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Animal Encyclopedia</title>
+
+<style>
+
+body{
+font-family:Arial;
+background:#eef2f3;
+margin:0;
+}
+
+header{
+background:#2c3e50;
+color:white;
+text-align:center;
+padding:20px;
+}
+
+.grid{
+display:grid;
+grid-template-columns:repeat(4,1fr);
+gap:20px;
+padding:30px;
+}
+
+.card{
+background:white;
+border-radius:10px;
+overflow:hidden;
+box-shadow:0 4px 8px rgba(0,0,0,0.2);
+cursor:pointer;
+transition:0.3s;
+}
+
+.card:hover{
+transform:scale(1.05);
+}
+
+img{
+width:100%;
+height:200px;
+object-fit:cover;
+}
+
+.info{
+padding:10px;
+display:none;
+}
+
+.card.active .info{
+display:block;
+}
+
+</style>
+
+<script>
+
+function toggleInfo(card){
+card.classList.toggle("active")
+}
+
+</script>
+
+</head>
+
+<body>
+
+<header>
+<h1>Animal Behavior Encyclopedia</h1>
+<p>Click any animal to view behavior</p>
+</header>
+
+<div class="grid">
+
+<script>
+
+const animals=[
+["Lion","Carnivore","Savannah predator"],
+["Tiger","Carnivore","Jungle hunter"],
+["Elephant","Herbivore","Highly intelligent"],
+["Dog","Omnivore","Human companion"],
+["Cat","Carnivore","Agile predator"],
+["Wolf","Carnivore","Pack hunter"],
+["Bear","Omnivore","Forest giant"],
+["Panda","Herbivore","Bamboo eater"],
+["Giraffe","Herbivore","Tall grazer"],
+["Zebra","Herbivore","Striped grazer"],
+["Kangaroo","Herbivore","Powerful jumper"],
+["Monkey","Omnivore","Highly social"],
+["Fox","Omnivore","Clever hunter"],
+["Cheetah","Carnivore","Fastest animal"],
+["Leopard","Carnivore","Stealth predator"],
+["Horse","Herbivore","Strong runner"],
+["Cow","Herbivore","Domesticated grazer"],
+["Rabbit","Herbivore","Burrowing animal"],
+["Deer","Herbivore","Forest grazer"],
+["Camel","Herbivore","Desert survivor"]
+]
+
+animals.forEach(a=>{
+document.write(`
+<div class="card" onclick="toggleInfo(this)">
+<img src="https://source.unsplash.com/400x300/?${a[0]}">
+<div class="info">
+<h3>${a[0]}</h3>
+<p><b>Food:</b> ${a[1]}</p>
+<p><b>Behavior:</b> ${a[2]}</p>
+</div>
+</div>
+`)
+})
+
+</script>
+
+</div>
+
+</body>
+</html>

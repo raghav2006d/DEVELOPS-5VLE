@@ -1,0 +1,20 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: animal-app
+spec:
+  replicas: 2
+  selector:
+    matchLabels:
+      app: animal
+  template:
+    metadata:
+      labels:
+        app: animal
+    spec:
+      containers:
+        - name: animal-container
+          image: animal-website
+          imagePullPolicy: Never
+          ports:
+            - containerPort: 80
